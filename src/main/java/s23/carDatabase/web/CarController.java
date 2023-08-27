@@ -20,4 +20,24 @@ public class CarController {
 			@RequestParam(name="ika") int age) {
 		return "Hei " + nimi + " " + age + " vuotta.";
 	}
+	
+	@RequestMapping("index")
+	@ResponseBody
+	public String index() {
+		return "This is the main page";
+	}
+	
+	@RequestMapping("contact")
+	@ResponseBody
+	public String contact() {
+		return "This is the contact page";
+	
+	}
+	
+	@RequestMapping("hello")
+	@ResponseBody
+	public String hei(@RequestParam(name = "location") String paikka, @RequestParam(name="name") String nimi) {
+		return "Welcome to the " + paikka + " " + nimi + "!";
+	
+	}
 }
